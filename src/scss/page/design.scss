@@ -1,0 +1,46 @@
+.design {
+    background: url(../img/home/design-back.jpg) center no-repeat;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding-top: 70px;
+    margin-bottom: 100px;
+    h2 {
+        font-size: 29px;
+        text-transform: uppercase;
+        color: #fff;
+    }
+    h3 {
+        font-size: 25px;
+        font-weight: 400;
+        margin-bottom: 0;
+        color: #fff;
+    }
+    hr {
+        background-color: red;
+    }
+    &_image {
+        position: relative;
+        margin: 0 auto;
+        max-width: 735px;
+        img {
+            width: 100%;
+            &:nth-of-type(1) {
+                padding-top: 50px;
+                display: block;
+                margin: 0 auto;
+                max-width: 477px;
+            }
+            &:nth-of-type(2) {
+                position: absolute;
+                bottom: -70px;
+                right: 0;
+                max-width: 211px;
+                @media screen and (max-width: 499.98px) {
+                    bottom: -11%;
+                    max-width: 45%;
+                }
+            }
+        }
+    }
+}

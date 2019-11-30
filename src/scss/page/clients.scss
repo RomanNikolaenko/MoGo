@@ -1,0 +1,66 @@
+.clients {
+    margin: 0 auto;
+    padding: 70px 0;
+    background: url(../img/home/clients-back.jpg) no-repeat;
+    max-width: 1920px;
+    background-size: 100% 100%;
+    @media screen and (max-width: 767.98px) {
+        background-size: cover;
+    }
+    .container {
+        & > h2 {
+            font-size: 29px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        & > h3 {
+            font-size: 25px;
+            font-weight: 400;
+            margin-bottom: 0;
+            text-align: center;
+        }
+        & > hr {
+            background-color: red;
+        }
+    }
+    &_say {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 230px);
+        grid-gap: 15px;
+        margin-top: 70px;
+        color: #fff;
+        @media screen and (max-width: 767.98px) {
+            grid-template-columns: repeat(auto-fill, 100%);
+            grid-template-rows: auto;
+            justify-content: center;
+        }
+        &_item {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            &_image {
+                img {
+                    border-radius: 50%;
+                }
+            }
+            &_title {
+                h2 {
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    padding: 0;
+                    margin: 0 0 5px 0;
+                }
+                h3 {
+                    padding-bottom: 16px;
+                    font-size: 16px;
+                    margin: 0;
+                    font-weight: 400;
+                }
+                hr {
+                    background: red;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+.second {
+    padding: 100px 0;
+    .carousel {
+        &_item {
+            grid-template-columns: 220px 1fr;
+            @media screen and (max-width: 767.98px) {
+                grid-template-columns: 1fr;
+            }
+            &_left {
+                img {
+                    border-radius: 50%;
+                    width: 210px;
+                    height: 210px;
+                }
+            }
+        }
+    }
+}

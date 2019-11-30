@@ -1,0 +1,17 @@
+.hipster {
+    padding: 0 0 110px;
+    &_logo {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(130px, 15%));
+        justify-content: space-between;
+        text-align: center;
+        @media screen and (max-width: 575.98px) {
+            grid-template-columns: repeat(auto-fill, 46%);
+            grid-gap: 20px 0;
+        }
+        @media screen and (min-width: 576px) and (max-width: 991.98px) {
+            grid-template-columns: repeat(auto-fill, 30%);
+            grid-gap: 20px 0;
+        }
+    }
+}

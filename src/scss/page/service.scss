@@ -1,0 +1,86 @@
+.service {
+    padding-top: 70px;
+    padding-bottom: 100px;
+    .container {
+        & > h2 {
+            font-size: 29px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        & > h3 {
+            font-size: 25px;
+            font-weight: 400;
+            margin-bottom: 0;
+            text-align: center;
+        }
+        & > hr {
+            background-color: red;
+        }
+        & > p {
+            line-height: 25px;
+            max-width: 800px;
+            margin: 24px auto;
+        }
+    }
+    &_main {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 47%);
+        grid-gap: 40px;
+        justify-content: space-between;
+        padding-top: 30px;
+        @media screen and (max-width: 767.98px) {
+            grid-template-columns: repeat(auto-fill, 90%);
+            justify-content: center;
+        }
+        &_img {
+            img {
+                width: 100%;
+            }
+        }
+        &_accordion {
+            display: flex;
+            flex-direction: column;
+            &_newstitle {
+                font-family: "RobotoCondensedRegular";
+                font-size: 15px;
+                text-transform: uppercase;
+                font-weight: 400;
+                margin: 0;
+                padding: 15px;
+                border-bottom: 1px solid #e5e5e5;
+                border-left: 1px solid #e5e5e5;
+                border-right: 1px solid #e5e5e5;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                position: relative;
+                img {
+                    padding-right: 15px;
+                }
+            }
+            &_newstitle:nth-of-type(1) {
+                border-top: 1px solid #e5e5e5;
+            }
+            &_newscontent {
+                border-bottom: 1px solid #e5e5e5;
+                border-left: 1px solid #e5e5e5;
+                border-right: 1px solid #e5e5e5;
+                padding: 0 15px;
+            }
+        }
+    }
+}
+
+
+.ui-accordion-header-icon {
+    background-image: url(../img/home/plus-minus.svg);
+    background-size: cover;
+    height: 12px;
+    width: 12px;
+    position: absolute;
+    right: 15px;
+}
+
+.ui-accordion-header-icon.ui-icon-triangle-1-s {
+    background-position: 0 -36px;
+}
