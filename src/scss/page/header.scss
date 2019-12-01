@@ -1,4 +1,8 @@
 // header-open
+body {
+    max-width: 1920px;
+    margin: 0 auto;
+}
 header {
     position: fixed;
     top: 0;
@@ -17,7 +21,7 @@ header {
 }
 .header_grid {
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 150px 1fr;
     grid-template-rows: 70px;
     @media screen and (max-width: 991.98px) {
         grid-template-columns: 1fr;
@@ -43,87 +47,72 @@ header {
     display: grid;
     position: relative;
     align-content: center;
-    @media screen and (min-width: 992px) {
-        grid-template-columns: 1fr 270px;
+    grid-template-columns: 1fr 178px;
+    grid-gap: 20px;
+    @media screen and (max-width: 991.98px) {
+        padding: 0 15px 0 0;
     }
     &_btn {
-        @media screen and (min-width: 992px) {
-            display: none;
-        }
-        @media screen and (max-width: 991.98px) {
-            width: 35px;
-            height: 35px;
-            border: 0;
-            background: url(../img/home/menu-button.svg) no-repeat;
-            background-size: 100% 100%;
-            margin-left: 10px;
-        }
-    }
-    &_nav {
-        list-style: none;
-        display: grid;
-        grid-template-columns: repeat(5, minmax(80px, 130px));
-        grid-gap: 0 15px;
-        padding: 0;
-        li {
-            @media screen and (min-width: 576px) {
-                text-align: center;
+        .hamburger {
+            @media screen and (min-width: 992px) {
+                display: none;
             }
         }
-        @media screen and (max-width: 991.98px) {
-            display: none;
-            position: absolute;
-            left: 0;
-            top: 70px;
-            width: 100%;
-            background: hsla(222,8%,51%, 0.6);
-            margin: 0;
-            padding: 0 0 50px;
-            overflow: hidden;
-        }
-        @media screen and (max-width: 575.98px) {
-            grid-template-columns: repeat(1, 1fr);
-            padding-left: 50px;
-        }
-        @media screen and (min-width: 576px) and (max-width: 991.98px) {
-            height: 45px;
-        }
-        &_item {
-            line-height: 42px;
-            a {
-                text-decoration: none;
-                color: #fff;
-                padding-bottom: 8px;
-                text-transform: uppercase;
-                &:hover {
-                    color: #fce38a;
-                    border-bottom: 3px solid;
+        &_nav {
+            display: flex;
+            padding: 0;
+            list-style: none;
+            justify-content: space-around;
+            li {
+                @media screen and (min-width: 576px) {
+                    text-align: center;
+                }
+            }
+            @media screen and (max-width: 991.98px) {
+                position: absolute;
+                left: 0;
+                top: 70px;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                background: hsla(222,8%,51%,.6);
+                align-content: center;
+                transform: translate(-150vw, 0);
+                transition: width 475ms ease-out, transform 450ms ease;
+            }
+            @media screen and (max-width: 575.98px) {
+                flex-direction: column;
+                padding-left: 25px;
+                height: 240px;
+            }
+            &_item {
+                line-height: 42px;
+                @media screen and (max-width: 991.98px) {
+                    display: flex;
+                    align-items: center;
+                    a {
+                        padding: 0;
+                    }
+                }
+                a {
+                    text-decoration: none;
+                    color: #fff;
+                    padding-bottom: 8px;
+                    text-transform: uppercase;
+                    &:hover {
+                        color: #fce38a;
+                        border-bottom: 3px solid;
+                    }
                 }
             }
         }
     }
     .form {
         display: grid;
-        grid-template-columns: 135px 45px;
+        grid-template-columns: 135px 22px;
         grid-gap: 0 20px;
         align-content: center;
-        @media screen and (max-width: 575.98px) {
-            position: absolute;
-            left: 50px;
-            top: 285px;
-            width: 100%;
-            justify-content: flex-start;
-        }
-        @media screen and (min-width: 576px) and (max-width: 991.98px) {
-            position: absolute;
-            left: 50px;
-            top: 120px;
-            width: 100%;
-            justify-content: flex-start;
-        }
-        @media screen and (max-width: 991.98px) {
-            display: none;
-        }
+        justify-content: end;
         input {
             height: 22px;
         }
@@ -133,8 +122,62 @@ header {
         }
     }
 }
-
-.open {
-    display: grid !important;
-}
 // header-close
+  
+  input.hamburger {
+    display: none;
+    &:checked {
+        & ~ .header_menu_btn_nav {
+            transform: translatex(0);
+      }
+      & ~ label {
+        > i {
+          background-color: transparent;
+          transform: rotate(90deg);
+          &:before {
+            transform: translate(-50%, -50%) rotate(315deg);
+          }
+          &:after {
+            transform: translate(-50%, -50%) rotate(-315deg);
+          }
+        }
+      }
+    }
+  }
+  
+  label.hamburger {
+    z-index: 1;
+    position: relative;
+    left: 15px;
+    display: block;
+    height: 50px;
+    width: 50px;
+    > i {
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      top: 50%;
+      background-color: #fff;
+      pointer-events: auto;
+      transition-duration: .35s;
+      transition-delay: .35s;
+      &:before,
+      &:after {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2px;
+        left: 50%;
+        background-color: #fff;
+        content: "";
+        transition: transform 0.35s;
+        transform-origin: 50% 50%;
+      }
+      &:before {
+        transform: translate(-50%, -14px);
+      }
+      &:after {
+        transform: translate(-50%, 14px);
+      }
+    }
+  }

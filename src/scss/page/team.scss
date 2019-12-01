@@ -23,7 +23,7 @@
         grid-template-columns: repeat(auto-fill, 31%);
         grid-gap: 25px;
         padding-top: 30px;
-        justify-content: space-between;
+        justify-content: space-around;
         @media screen and (max-width: 575.98px) {
             grid-template-columns: repeat(auto-fill, 100%);
             justify-content: center;
